@@ -14,6 +14,8 @@ export class WeatherService {
     let queryParams = new HttpParams();
     queryParams = queryParams.append('q', CityName);
     queryParams = queryParams.append('aqi', 'yes');
+    console.log(queryParams);
+
     return this.http.get<WeatherData>(environment.weatherBaseUrl, {
       params: queryParams,
     });
